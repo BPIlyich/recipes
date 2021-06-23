@@ -267,11 +267,3 @@ class UserRecipeScore(models.Model):
         db_table = 'user_recipe_rating'
         verbose_name = _('user recipe score')
         verbose_name_plural = _('user recipe scores')
-
-
-# Recipe.objects.filter(recipe_ingredients__ingredient__in=[])
-# ings = Ingredient.objects.filter(name__in=['Айриш крим', 'Дынный ликер BOLS', 'Кофейный ликер BOLS'])
-# Recipe.objects.annotate(unlikeness=Count('recipe_ingredients__pk', filter=~Q(recipe_ingredients__ingredient__in=ings))).order_by('-unlikeness')
-# Recipe.objects.annotate(unlikeness=Count('recipe_ingredients__pk', filter=~Q(recipe_ingredients__ingredient__in=ings))).filter(unlikeness=1)
-# Ingredient.objects.filter(recipe_ingredients__recipe__in=z.values_list('pk', flat=True)).annotate(x=Count('recipe_ingredients__recipe')).order_by('-x')
-# http://sqlfiddle.com/#!9/e4cc5b/6
