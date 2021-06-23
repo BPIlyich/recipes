@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    command: bash -c "python django_app/manage.py migrate && python django_app/manage.py loaddata initial_fixtures.json && python django_app/manage.py runserver 0.0.0.0:8888"
+    env_file: dev.env
+    volumes:
+      - .:/code
+    ports:
+      - "8888:8888"
